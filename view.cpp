@@ -9,8 +9,7 @@ int view_menu(){
     
     bool error_check = true;
     
-    cout << "1: Create\n2: Report\n";
-    cout << "3: Save\nEnter here: ";
+    cout << "1 (C)reate\n2 View (R)eports\n\nEnter command here: ";
  
     
     while(error_check){
@@ -22,18 +21,73 @@ int view_menu(){
             exit(0);
         }
         
-        number = atoi(input.c_str());
+        //number = atoi(input.c_str());
         
-        if((number < 1) ||(number > 3) ){
-            
-            cout<< "That is not a valid input please try again: ";
+        else if((input == "C") || (input == "R") ){
+
+            if(input == "C"){
+                number = 1;
+            }
+            else {
+                number = 2;
+            }
+            error_check = false;
+            return number;
         }
         else{
-            error_check = false;
+            cout<< "That is not a valid input please try again: ";
         }
     }
+}
+
+int view_create(){
     
-    return number;
+    string input;
+    
+    int number;
+    
+    bool error_check = true;
+    
+    cout << "\n1.1 (O)rder\n1.2 (C)ustomer\n1.3 (S)ales Associate\n";
+    cout << "1.4 Robot (M)odel\n1.5 Robot Com(P)onent\n\nEnter command here: ";
+    
+    
+    while(error_check){
+        
+        cin >> input;
+        
+        if(input == "q"){
+            cout<< "\nexiting...\n";
+            exit(0);
+        }
+        
+        //number = atoi(input.c_str());
+        
+        else if((input == "O") || (input == "C") || (input == "S") || (input == "M") || (input == "P")){
+            
+            if(input == "O"){
+                number = 1;
+            }
+            else if (input == "C") {
+                number = 2;
+            }
+            else if (input == "S") {
+                number = 3;
+            }
+            else if (input == "M") {
+                number = 4;
+            }
+            else{
+                number = 5;
+            }
+            error_check = false;
+            return number;
+        }
+        else{
+            cout<< "That is not a valid input please try again: ";
+        }
+    }
+
 }
 /*void view_publications(vector<Library> list, int counter){
 

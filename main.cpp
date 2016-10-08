@@ -1,6 +1,9 @@
 #include "std_lib_facilities.h"
 #include "view.h"
-#include "robot_parts.h"
+#include "robot_arm.h"
+#include "robot_head.h"
+#include "robot_torso.h"
+#include "robot_locomotor.h"
 
 
 int main () {
@@ -14,10 +17,13 @@ int main () {
     string tele_num;*/
     int option = 0;
     
-    cout << "\nMain Menu ( or press \"q\" to quit)\n_ _ _ _ _\n" << endl ;
+    int create = 0;
+    
+    //cout << "\nMain Menu ( or press \"q\" to quit)\n_ _ _ _ _\n" << endl ;
     
     while(true){
         //cout << "\nPlease select 1 of the 5 options or q to quit: " << endl ;
+        cout << "\nMain Menu ( or press \"q\" to quit)\n_ _ _ _ _\n" << endl ;
         option = view_menu();
         
         if(option == 1){
@@ -27,7 +33,7 @@ int main () {
                 size = size*size;
             }
             publications[i].create_publication();*/
-            cout << "you picked create\n";
+            int create = view_create();
             
             
         }

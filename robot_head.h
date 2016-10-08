@@ -1,12 +1,12 @@
 
- #ifndef _ROBOT_PARTS_H
- #define _ROBOT_PARTS_H
+ #ifndef _ROBOT_HEAD_H
+ #define _ROBOT_HEAD_H
 
-class robot_parts {
+class Head {
     
     protected:
     
-        void view_all_parts();
+        void create_part();
         int counter = 0;
     
         bool available = true;
