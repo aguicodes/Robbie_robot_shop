@@ -61,8 +61,6 @@ int view_create(){
             exit(0);
         }
         
-        //number = atoi(input.c_str());
-        
         else if((input == "O") || (input == "C") || (input == "S") || (input == "M") || (input == "P")){
             
             if(input == "O"){

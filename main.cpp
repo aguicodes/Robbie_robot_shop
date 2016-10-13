@@ -8,43 +8,71 @@
 
 int main () {
     
-    /*static int i = 0;
-    int size = 10;
-    vector<robot_parts> parts;
-    string input;
+
+    vector <Arm> parts;
+    /*string input;
     string isbn_input;
     string name;
     string tele_num;*/
-    int option = 0;
     
-    int create = 0;
+    int main_menu_option = 0;
+    int create_option = 0;
+    int report_option = 0;
+    int i = 1;
+    
+    string type = "";
     
     //cout << "\nMain Menu ( or press \"q\" to quit)\n_ _ _ _ _\n" << endl ;
     
     while(true){
         //cout << "\nPlease select 1 of the 5 options or q to quit: " << endl ;
         cout << "\nMain Menu ( or press \"q\" to quit)\n_ _ _ _ _\n" << endl ;
-        option = view_menu();
+        main_menu_option = view_menu();
         
-        if(option == 1){
+        if(main_menu_option == 1){
+            int create_option = view_create();
+            if (create_option == 5){
+                
+                cout << "Part type: ";
+                getline(cin, type);
+                
+                //parts.push_back(Arm());
+                
+                if ( type == "torso"){
+                    parts.push_back(Arm(true, false, false, false));
+                }
+                else if ( type == "arm"){
+                    parts.push_back(Arm(false, true, false, false));
+                }
+                else if ( type == "battery"){
+                    parts.push_back(Arm(false, false, true, false));
+                }
+                else if ( type == "locomotor"){
+                    parts.push_back(Arm(false, false, false, true));
+                }
+                else{
+                    parts.push_back(Arm(false, false, false, false))
+                }
+ 
+                parts[i].create_arm();
+                i++;
+            }
             /*++i;
             if(i > (publications.size())){
                 publications.resize(size*size);
                 size = size*size;
             }
             publications[i].create_publication();*/
-            int create = view_create();
-            
             
         }
-        else if(option == 2){
+        else if(main_menu_option == 2){
             
             //view_publications(publications, i);
             cout << "you picked report\n";
         }
-        else if(option == 3){
+        /*else if(option == 3){
             cout << "You picked save\n";
-            /*cin >> input;
+            cin >> input;
             if(input == "q"){
                 cout << "exiting...\n";
                 exit(0);
@@ -58,14 +86,14 @@ int main () {
                 publications[position].available = true;
                 cout << "\nThe publication has been checked in, Thank you.\n";
                 publications[position].name = "Available for checkout.";
-            }*/
+            }
             
         }
         else if(option == 4){
             
             cout << "you wanna quit";
             
-            /*cin >> isbn_input;
+            cin >> isbn_input;
             if(isbn_input == "q"){
                 cout << "exiting...\n";
                 exit(0);
@@ -85,9 +113,9 @@ int main () {
                 cout << "Please enter your telephone number: ";
                 getline(cin, tele_num);
                 publications[position].number = tele_num;
-            }*/
+            }
         }
-        /*else if (option == 5){
+        else if (option == 5){
             cout << "Welcome!!!\nFirst off... if you would like to quit the program at anytime just press q to quit.\n";
             cout << "follow the menu for the command you would like to proceed with. Notice that \n";
             cout << "when you choose command 2 to view the publications, you will be able to see if its\n";

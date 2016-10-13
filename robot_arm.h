@@ -4,19 +4,29 @@
 
 class Arm {
     
-    protected:
+    public:
     
-        void create_part();
+        void create_arm();
         int counter = 0;
     
-        bool available = true;
-        string name = "Available for checkout.";
-    
     private:
-        int torso_max_speed = 0;
-        int torso_power = 0;
-        int arm_power = 0;
-        int battery_energy = 0;
+    
+    string part_name = "";
+    string part_number = "";
+    string type = "";
+    string description = "";
+    string weight = "";
+    string cost = "";
+    bool torso = false;
+    bool battery = false;
+    bool arm = false;
+    bool locomotor = false;
+    string torso_battery_amount = "";
+    string locomotor_speed = "";
+    string locomotor_power = "";
+    string battery_energy = "";
+    string arm_power = "";
+    
     
 };
  #endif

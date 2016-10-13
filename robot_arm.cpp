@@ -2,30 +2,45 @@
 #include "robot_arm.h"
 #include "view.h"
 
-void Arm::create_part(){
+void Arm::create_arm(){
     
     
-    /*cout << "\nTitle: ";
+    cout << "\nCreate part name: ";
     cin.ignore(1,'\n');
-    getline(cin, title);
+    getline(cin, part_name);
     
-    cout << "Author: ";
-    getline(cin, author);
+    cout << "Create part number: ";
+    getline(cin, part_number);
     
-    cout << "Copyright year: ";
-    getline(cin, year);
+    /*cout << "Part type: ";
+    getline(cin, type);*/
     
-    cout << "Target age (adult/teen/children/restricted): ";
-    getline(cin, target_age);
+    if(torso){
+        cout << "Please specify the amount of batteries this torso should hold: ";
+        getline(cin, torso_battery_amount);
+    }
+    else if(battery){
+        cout << "Please specify battery energy (in kilowatt hours): ";
+        getline(cin, battery_energy);
+    }
+    else if(arm){
+        cout << "Please specify the power consumption (in watts): ";
+        getline(cin, arm_power);
+    }
+    else if(locomotor){
+        cout << "Power consumed when operating (in watts): ";
+        getline(cin, locomotor_power);
+        cout << "Maximum operating speed (in MPH): ";
+        getline(cin, locomotor_speed);
+    }
+    cout << "Part weight: ";
+    getline(cin, weight);
     
-    cout << "Genre (fiction/non-fiction/self-help/performance): ";
-    getline(cin, genre);
+    cout << "Cost: ";
+    getline(cin, cost);
     
-    cout << "Media (book/magazine/newspaper/audio/video): ";
-    getline(cin, media);
-    
-    cout << "ISBN: ";
-    getline(cin, isbn);*/
-    
+    cout << "Brief description ";
+    getline(cin, description);
+
     
 }
