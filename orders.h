@@ -1,8 +1,8 @@
 
- #ifndef _ROBOT_LOCOMOTOR_H
- #define _ROBOT_LOCOMOTOR_H
+ #ifndef _ORDERS_H
+ #define _ORDERS_H
 
-class Locomotor {
+class Orders {
     
     protected:
     

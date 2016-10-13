@@ -1,15 +1,15 @@
 #include "std_lib_facilities.h"
 #include "view.h"
-#include "robot_arm.h"
-#include "robot_head.h"
-#include "robot_torso.h"
-#include "robot_locomotor.h"
+#include "robot_parts.h"
+#include "sales_associates.h"
+#include "customers.h"
+#include "orders.h"
 
 
 int main () {
     
 
-    vector <Arm> parts;
+    vector <Parts> parts;
     /*string input;
     string isbn_input;
     string name;
@@ -39,22 +39,22 @@ int main () {
                 //parts.push_back(Arm());
                 
                 if ( type == "torso"){
-                    parts.push_back(Arm(true, false, false, false));
+                    parts.push_back(Parts(true, false, false, false));
                 }
                 else if ( type == "arm"){
-                    parts.push_back(Arm(false, true, false, false));
+                    parts.push_back(Parts(false, true, false, false));
                 }
                 else if ( type == "battery"){
-                    parts.push_back(Arm(false, false, true, false));
+                    parts.push_back(Parts(false, false, true, false));
                 }
                 else if ( type == "locomotor"){
-                    parts.push_back(Arm(false, false, false, true));
+                    parts.push_back(Parts(false, false, false, true));
                 }
                 else{
-                    parts.push_back(Arm(false, false, false, false))
+                    parts.push_back(Parts(false, false, false, false))
                 }
  
-                parts[i].create_arm();
+                parts[i].create_parts();
                 i++;
             }
             /*++i;

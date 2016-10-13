@@ -1,8 +1,8 @@
 #include "std_lib_facilities.h"
-#include "robot_arm.h"
-#include "robot_head.h"
-#include "robot_torso.h"
-#include "robot_locomotor.h"
+/*#include "robot_parts.h"
+#include "sales_associates.h"
+#include "customers.h"
+#include "orders.h"*/
 
 int view_menu();
 int view_create();

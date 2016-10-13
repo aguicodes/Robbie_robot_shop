@@ -1,12 +1,12 @@
 
- #ifndef _ROBOT_ARM_H
- #define _ROBOT_ARM_H
+ #ifndef _ROBOT_PARTS_H
+ #define _ROBOT_PARTS_H
 
-class Arm {
+class Parts {
     
     public:
     
-        void create_arm();
+        void create_parts();
         int counter = 0;
     
     private:

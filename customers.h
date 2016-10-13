@@ -1,6 +1,6 @@
 
- #ifndef _ROBOT_TORSO_H
- #define _ROBOT_TORSO_H
+ #ifndef _CUSTOMERS_H
+ #define _CUSTOMERS_H
 
 class Torso {
     

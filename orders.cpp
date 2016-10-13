@@ -1,8 +1,8 @@
 #include "std_lib_facilities.h"
-#include "robot_head.h"
+#include "orders.h"
 #include "view.h"
 
-void Head::create_part(){
+void Orders::create_part(){
     
     
     /*cout << "\nTitle: ";
@@ -26,6 +26,6 @@ void Head::create_part(){
     
     cout << "ISBN: ";
     getline(cin, isbn);*/
-    
 
+    
 }

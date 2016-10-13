@@ -1,8 +1,8 @@
 #include "std_lib_facilities.h"
-#include "robot_torso.h"
+#include "sales_associates.h"
 #include "view.h"
 
-void Torso::create_part(){
+void Sales::create_part(){
     
     
     /*cout << "\nTitle: ";
@@ -27,4 +27,5 @@ void Torso::create_part(){
     cout << "ISBN: ";
     getline(cin, isbn);*/
     
+
 }

@@ -1,8 +1,8 @@
 
- #ifndef _ROBOT_HEAD_H
- #define _ROBOT_HEAD_H
+ #ifndef _SALES_ASSOCIATES_H
+ #define _SALES_ASSOCIATES_H
 
-class Head {
+class Sales {
     
     protected:
     

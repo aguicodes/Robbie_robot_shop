@@ -1,8 +1,8 @@
 #include "std_lib_facilities.h"
-#include "robot_arm.h"
+#include "robot_parts.h"
 #include "view.h"
 
-void Arm::create_arm(){
+void Parts::create_parts(){
     
     
     cout << "\nCreate part name: ";

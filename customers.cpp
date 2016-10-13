@@ -1,8 +1,8 @@
 #include "std_lib_facilities.h"
-#include "robot_locomotor.h"
+#include "customers.h"
 #include "view.h"
 
-void Locomotor::create_part(){
+void Torso::create_part(){
     
     
     /*cout << "\nTitle: ";
@@ -26,6 +26,5 @@ void Locomotor::create_part(){
     
     cout << "ISBN: ";
     getline(cin, isbn);*/
-
     
 }
