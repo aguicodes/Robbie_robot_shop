@@ -20,42 +20,31 @@ int main () {
     int report_option = 0;
     int i = 1;
     
-    string type = "";
-    
-    //cout << "\nMain Menu ( or press \"q\" to quit)\n_ _ _ _ _\n" << endl ;
-    
     while(true){
-        //cout << "\nPlease select 1 of the 5 options or q to quit: " << endl ;
+
         cout << "\nMain Menu ( or press \"q\" to quit)\n_ _ _ _ _\n" << endl ;
         main_menu_option = view_menu();
         
         if(main_menu_option == 1){
             int create_option = view_create();
             if (create_option == 5){
-                
-                cout << "Part type: ";
-                getline(cin, type);
-                
-                //parts.push_back(Arm());
-                
-                if ( type == "torso"){
-                    parts.push_back(Parts(true, false, false, false));
-                }
-                else if ( type == "arm"){
-                    parts.push_back(Parts(false, true, false, false));
-                }
-                else if ( type == "battery"){
-                    parts.push_back(Parts(false, false, true, false));
-                }
-                else if ( type == "locomotor"){
-                    parts.push_back(Parts(false, false, false, true));
-                }
-                else{
-                    parts.push_back(Parts(false, false, false, false))
-                }
- 
+
+                parts.push_back(Parts());
                 parts[i].create_parts();
                 i++;
+            }
+            else if(create_option == 1){
+                //order code here
+            }
+            else if(create_option == 2){
+                //code here
+            }
+            else if(create_option == 3){
+                //code here
+            }
+            else if(create_option == 4){
+               
+                //
             }
             /*++i;
             if(i > (publications.size())){
@@ -67,8 +56,13 @@ int main () {
         }
         else if(main_menu_option == 2){
             
-            //view_publications(publications, i);
-            cout << "you picked report\n";
+            int create_option = view_reports();
+            
+            if (create_option == 5){
+                view_parts(parts);
+            }
+
+            
         }
         /*else if(option == 3){
             cout << "You picked save\n";

@@ -11,6 +11,6 @@
 #include<cstdlib>
 
 using namespace std;
-inline void keep_window_open() { char ch; cin>>ch; }
+//inline void keep_window_open() { char ch; cin>>ch; }
 
 #endif 

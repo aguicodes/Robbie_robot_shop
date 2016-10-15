@@ -87,21 +87,69 @@ int view_create(){
     }
 
 }
-/*void view_publications(vector<Library> list, int counter){
-
-    for(int j = 1; j <= counter; j++){
+int view_reports(){
+    string input;
+    
+    int number;
+    
+    bool error_check = true;
+    
+    cout << "\n1.1 (O)rders\n1.2 (C)ustomers\n1.3 (S)ales Associates\n";
+    cout << "1.4 Robot (M)odels\n1.5 Robot(P)arts\n\nEnter command here: ";
+    
+    
+    while(error_check){
         
-        cout << "\"" << list[j].title << "\"" << " by " << list[j].author << ", ";
-        cout << list[j].year << " ("<< list[j].target_age << " " << list[j].genre << " ";
+        cin >> input;
+        
+        if(input == "q"){
+            cout<< "\nexiting...\n";
+            exit(0);
+        }
+        
+        else if((input == "O") || (input == "C") || (input == "S") || (input == "M") || (input == "P")){
+            
+            if(input == "O"){
+                number = 1;
+            }
+            else if (input == "C") {
+                number = 2;
+            }
+            else if (input == "S") {
+                number = 3;
+            }
+            else if (input == "M") {
+                number = 4;
+            }
+            else{
+                number = 5;
+            }
+            error_check = false;
+            return number;
+        }
+        else{
+            cout<< "That is not a valid input please try again: ";
+        }
+    }
+    
+}
+void view_parts(vector<Parts> list){
+    
+    cout<< "size: " << list.size() << endl;
+
+    for(int j = 1; j <= list.size(); j++){
+        
+        cout << "+" << list[j].part_name << "+" << endl;
+        /*cout << list[j].year << " ("<< list[j].target_age << " " << list[j].genre << " ";
         cout << list[j].media << ") ISBN: " << list[j].isbn << endl;
         if((list[j].available) == true){
             cout << "Available for checkout.\n";
         }
         else{
             cout << "Checked out to " << list[j].name << " (" << list[j].number << ")\n";
-        }
+        }*/
     }
-}
+/*}
 int check_it_in(vector<Library> list, int counter, string telephone){
     for(int i = 1; i <= counter; i++){
         if(!(list[i].number).compare(telephone)){
@@ -116,5 +164,5 @@ int check_it_out(vector<Library> list, int counter, string idnum){
             return i;
         }
     }
-    return -1;
-}*/
+    return -1;*/
+}

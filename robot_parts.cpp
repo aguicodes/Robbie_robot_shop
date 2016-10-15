@@ -2,8 +2,30 @@
 #include "robot_parts.h"
 #include "view.h"
 
+
+
+
+
+
+void Parts::set_option(string input){
+    
+    if ( type == "torso"){
+        torso = true;
+    }
+    else if ( type == "arm"){
+        arm = true;
+        cout<< "set\n";
+    }
+    else if ( type == "battery"){
+        battery = true;
+    }
+    else if ( type == "locomotor"){
+        locomotor = true;
+    }
+}
 void Parts::create_parts(){
     
+    //set_option();
     
     cout << "\nCreate part name: ";
     cin.ignore(1,'\n');
@@ -12,8 +34,11 @@ void Parts::create_parts(){
     cout << "Create part number: ";
     getline(cin, part_number);
     
-    /*cout << "Part type: ";
-    getline(cin, type);*/
+    cout << "Part type: ";
+    getline(cin, type);
+    cout<< "this word: " << type << endl;
+    
+    set_option(type);
     
     if(torso){
         cout << "Please specify the amount of batteries this torso should hold: ";
