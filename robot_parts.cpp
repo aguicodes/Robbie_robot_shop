@@ -14,7 +14,7 @@ void Parts::set_option(string input){
     }
     else if ( type == "arm"){
         arm = true;
-        cout<< "set\n";
+        //cout<< "set\n";
     }
     else if ( type == "battery"){
         battery = true;
@@ -36,7 +36,7 @@ void Parts::create_parts(){
     
     cout << "Part type: ";
     getline(cin, type);
-    cout<< "this word: " << type << endl;
+    //cout<< "this word: " << type << endl;
     
     set_option(type);
     
@@ -58,10 +58,10 @@ void Parts::create_parts(){
         cout << "Maximum operating speed (in MPH): ";
         getline(cin, locomotor_speed);
     }
-    cout << "Part weight: ";
+    cout << "Part weight(in lbs): ";
     getline(cin, weight);
     
-    cout << "Cost: ";
+    cout << "Cost: ";
     getline(cin, cost);
     
     cout << "Brief description ";

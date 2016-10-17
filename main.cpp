@@ -10,15 +10,13 @@ int main () {
     
 
     vector <Parts> parts;
-    /*string input;
-    string isbn_input;
-    string name;
-    string tele_num;*/
+ 
     
     int main_menu_option = 0;
     int create_option = 0;
     int report_option = 0;
     int i = 1;
+    int size = 10;
     
     while(true){
 
@@ -28,8 +26,10 @@ int main () {
         if(main_menu_option == 1){
             int create_option = view_create();
             if (create_option == 5){
-
-                parts.push_back(Parts());
+                if(i > (parts.size())){
+                    parts.resize(size*size);
+                    size = size*size;
+                }
                 parts[i].create_parts();
                 i++;
             }
@@ -59,7 +59,7 @@ int main () {
             int create_option = view_reports();
             
             if (create_option == 5){
-                view_parts(parts);
+                view_parts(parts, i);
             }
 
             

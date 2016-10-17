@@ -1,6 +1,5 @@
 #include "std_lib_facilities.h"
 #include "view.h"
-
 int view_menu(){
     
     string input;
@@ -133,24 +132,36 @@ int view_reports(){
     }
     
 }
-void view_parts(vector<Parts> list){
+void view_parts(vector<Parts> list, int counter){
     
-    cout<< "size: " << list.size() << endl;
+    //cout<< "size: " << list.size() << endl;
 
-    for(int j = 1; j <= list.size(); j++){
+    for(int i = 1; i < counter; i++){
         
-        cout << "+" << list[j].part_name << "+" << endl;
-        /*cout << list[j].year << " ("<< list[j].target_age << " " << list[j].genre << " ";
-        cout << list[j].media << ") ISBN: " << list[j].isbn << endl;
-        if((list[j].available) == true){
-            cout << "Available for checkout.\n";
+        cout << "\nPart type: "<< list[i].type;
+        cout << "\nPart name: " << list[i].part_name;
+        cout << "\nPart number: " << list[i].type << endl;
+        //cout << list[j].media << ") ISBN: " << list[j].isbn << endl;
+        if(list[i].torso){
+            cout << "Battery amount: " << list[i].torso_battery_amount << endl;
         }
-        else{
-            cout << "Checked out to " << list[j].name << " (" << list[j].number << ")\n";
-        }*/
+        else if(list[i].arm){
+            cout << "Power consumption (in watts): " << list[i].arm_power << endl;
+        }
+        else if(list[i].locomotor){
+            cout << "Max speed: " << list[i].locomotor_speed << "Power Consumption: ";
+            cout << list[i].locomotor_power << endl;
+        }
+        else if(list[i].battery){
+            cout << "\nBattery energy:  " << list[i].battery_energy << endl;
+        }
+        /*cout << list[j].media << ") ISBN: " << list[j].isbn << endl;
+        cout << list[j].media << ") ISBN: " << list[j].isbn << endl;
+        cout << list[j].media << ") ISBN: " << list[j].isbn << endl;*/
+
     }
-/*}
-int check_it_in(vector<Library> list, int counter, string telephone){
+}
+/*int check_it_in(vector<Library> list, int counter, string telephone){
     for(int i = 1; i <= counter; i++){
         if(!(list[i].number).compare(telephone)){
             return i;
@@ -164,5 +175,5 @@ int check_it_out(vector<Library> list, int counter, string idnum){
             return i;
         }
     }
-    return -1;*/
-}
+    return -1;
+}*/

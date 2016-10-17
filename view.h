@@ -8,7 +8,7 @@ int view_menu();
 int view_create();
 int view_reports();
 
-void view_parts(vector<Parts> list);
+void view_parts(vector<Parts> list, int counter);
 /*int check_it_in(vector<Library> list, int counter, string telephone);
 int check_it_out(vector<Library> list, int counter, string idnum);*/
 
