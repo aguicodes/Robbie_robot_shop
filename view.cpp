@@ -16,7 +16,7 @@ int view_menu(){
         cin >> input;
         
         if(input == "q"){
-            cout<< "\nexiting...\n";
+            cout<< "\nexiting...\n\n";
             exit(0);
         }
         
@@ -56,7 +56,7 @@ int view_create(){
         cin >> input;
         
         if(input == "q"){
-            cout<< "\nexiting...\n";
+            cout<< "\nexiting...\n\n";
             exit(0);
         }
         
@@ -102,7 +102,7 @@ int view_reports(){
         cin >> input;
         
         if(input == "q"){
-            cout<< "\nexiting...\n";
+            cout<< "\nexiting...\n\n";
             exit(0);
         }
         
@@ -136,10 +136,10 @@ void view_parts(vector<Parts> list, int counter){
     
     //cout<< "size: " << list.size() << endl;
 
-    for(int i = 1; i < counter; i++){
+    for(int i = 0; i < counter; i++){
         
-        cout << "\nPart type: "<< list[i].type;
-        cout << "\nPart name: " << list[i].part_name;
+        cout << "\n*************************\nPart type: "<< list[i].type;
+        cout << "\n*************************\nPart name: " << list[i].part_name;
         cout << "\nPart number: " << list[i].type << endl;
         //cout << list[j].media << ") ISBN: " << list[j].isbn << endl;
         if(list[i].torso){
@@ -149,15 +149,15 @@ void view_parts(vector<Parts> list, int counter){
             cout << "Power consumption (in watts): " << list[i].arm_power << endl;
         }
         else if(list[i].locomotor){
-            cout << "Max speed: " << list[i].locomotor_speed << "Power Consumption: ";
+            cout << "Max speed: " << list[i].locomotor_speed << "\nPower Consumption: ";
             cout << list[i].locomotor_power << endl;
         }
         else if(list[i].battery){
             cout << "\nBattery energy:  " << list[i].battery_energy << endl;
         }
-        /*cout << list[j].media << ") ISBN: " << list[j].isbn << endl;
-        cout << list[j].media << ") ISBN: " << list[j].isbn << endl;
-        cout << list[j].media << ") ISBN: " << list[j].isbn << endl;*/
+        cout << "Part weight(in lbs): " << list[i].weight << endl;
+        cout << "Price: " << list[i].cost <<"\nDescription: "<< list[i].description << endl;
+        cout << "*************************" << endl;
 
     }
 }

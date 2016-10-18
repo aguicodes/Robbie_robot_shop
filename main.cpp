@@ -3,38 +3,48 @@
 #include "robot_parts.h"
 #include "sales_associates.h"
 #include "customers.h"
-#include "orders.h"
+#include "robot_models.h"
 
 
 int main () {
     
 
+    
     vector <Parts> parts;
+    
+    vector <Models> models;
  
     
     int main_menu_option = 0;
     int create_option = 0;
     int report_option = 0;
-    int i = 1;
-    int size = 10;
+    static int i = 1;
+    static int j = 1;
+    int size = 100;
+    int model_size = 100;
     
     while(true){
 
-        cout << "\nMain Menu ( or press \"q\" to quit)\n_ _ _ _ _\n" << endl ;
+        cout<<"\nMain Menu ( or press \"q\" to quit)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n"<<endl;
         main_menu_option = view_menu();
         
         if(main_menu_option == 1){
             int create_option = view_create();
             if (create_option == 5){
                 if(i > (parts.size())){
-                    parts.resize(size*size);
-                    size = size*size;
+                    size = size*2;
+                    parts.resize(size);
                 }
                 parts[i].create_parts();
                 i++;
             }
-            else if(create_option == 1){
-                //order code here
+            else if(create_option == 4){
+                if(j > (models.size())){
+                    model_size = model_size*2;
+                    models.resize(model_size);
+                }
+                models[i].create_models(parts, i);
+                i++;
             }
             else if(create_option == 2){
                 //code here

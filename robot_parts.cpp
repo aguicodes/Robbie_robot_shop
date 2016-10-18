@@ -25,20 +25,19 @@ void Parts::set_option(string input){
 }
 void Parts::create_parts(){
     
-    //set_option();
-    
-    cout << "\nCreate part name: ";
+    cout << "\nPart type: ";
     cin.ignore(1,'\n');
-    getline(cin, part_name);
-    
-    cout << "Create part number: ";
-    getline(cin, part_number);
-    
-    cout << "Part type: ";
     getline(cin, type);
     //cout<< "this word: " << type << endl;
     
     set_option(type);
+    
+    cout << "Create part name: ";
+    //`
+    getline(cin, part_name);
+    
+    cout << "Create part number: ";
+    getline(cin, part_number);
     
     if(torso){
         cout << "Please specify the amount of batteries this torso should hold: ";
@@ -61,10 +60,10 @@ void Parts::create_parts(){
     cout << "Part weight(in lbs): ";
     getline(cin, weight);
     
-    cout << "Cost: ";
+    cout << "Price: ";
     getline(cin, cost);
     
-    cout << "Brief description ";
+    cout << "Brief description: ";
     getline(cin, description);
 
     
