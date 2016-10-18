@@ -43,8 +43,8 @@ int main () {
                     model_size = model_size*2;
                     models.resize(model_size);
                 }
-                models[i].create_models(parts, i);
-                i++;
+                models[j].create_models(parts, i);
+                j++;
             }
             else if(create_option == 2){
                 //code here
@@ -70,6 +70,12 @@ int main () {
             
             if (create_option == 5){
                 view_parts(parts, i);
+            }
+            else if (create_option == 4){
+                for(int k = 1; k < j; k++){
+                    models[k].view_models();
+                }
+               // models.view_models();
             }
 
             

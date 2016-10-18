@@ -8,11 +8,17 @@ class Models {
     
         void create_models(vector<Parts>list, int size);
     
-        void view_models (vector<Parts>list, int model[] );
+        void view_models ();
     
         int model_quantity ();
     
         double total_cost(int quantity, double price);
+    
+        void print_head(string s[6]);
+        void print_arm(string s[7]);
+        void print_torso(string s[7]);
+        void print_loco(string s[8]);
+        void print_battery(string s[7]);
     
     private:
         string head [6];
@@ -21,6 +27,7 @@ class Models {
         string torso[7];
         string locomotor [8];
         string battery [7];
+        string name;
     
         double cost;
         int quantity;

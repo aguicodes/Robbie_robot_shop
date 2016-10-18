@@ -136,7 +136,7 @@ void view_parts(vector<Parts> list, int counter){
     
     //cout<< "size: " << list.size() << endl;
 
-    for(int i = 0; i < counter; i++){
+    for(int i = 1; i < counter; i++){
         
         cout << "\n*************************\nPart type: "<< list[i].type;
         cout << "\n*************************\nPart name: " << list[i].part_name;
@@ -153,7 +153,7 @@ void view_parts(vector<Parts> list, int counter){
             cout << list[i].locomotor_power << endl;
         }
         else if(list[i].battery){
-            cout << "\nBattery energy:  " << list[i].battery_energy << endl;
+            cout << "Battery energy:  " << list[i].battery_energy << endl;
         }
         cout << "Part weight(in lbs): " << list[i].weight << endl;
         cout << "Price: " << list[i].cost <<"\nDescription: "<< list[i].description << endl;

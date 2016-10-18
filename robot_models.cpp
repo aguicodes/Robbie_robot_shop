@@ -8,10 +8,18 @@ void Models::create_models(vector<Parts>list, int size){
     string input;
     bool part_exist = true;
     
-    cout << "\n******************************\nHead parts to choose from\n";
+    
+    cout << "\n******************************\nWelcome to creating a robot\n";
     cout << "******************************\n";
     
-    for(int i = 0; i < size; i++){
+    cout<< "Give it a name: ";
+    cin.ignore(1,'\n');
+    getline(cin, name);
+    
+    cout << "\n\n******************************\nHead parts to choose from\n";
+    cout << "******************************\n";
+    
+    for(int i = 1; i < size; i++){
         
         if(list[i].type == "head"){
             
@@ -25,7 +33,7 @@ void Models::create_models(vector<Parts>list, int size){
     while(part_exist){
             
         cout<< "Please enter head part number: ";
-        cin.ignore(1,'\n');
+        //cin.ignore(1,'\n');
         getline(cin, input);
             
         for(int i = 0; i < size; i++){
@@ -56,7 +64,7 @@ void Models::create_models(vector<Parts>list, int size){
     cout << "\n******************************\nArm parts to choose from\n";
     cout << "******************************\n";
     part_exist = true;
-    for(int i = 0; i < size; i++){
+    for(int i = 1; i < size; i++){
         
         if(list[i].type == "arm"){
             
@@ -70,7 +78,6 @@ void Models::create_models(vector<Parts>list, int size){
     while(part_exist){
         
         cout<< "Please enter part number for first arm: ";
-        cin.ignore(1,'\n');
         getline(cin, input);
         
         for(int i = 0; i < size; i++){
@@ -116,7 +123,7 @@ void Models::create_models(vector<Parts>list, int size){
     while(part_exist){
         
         cout<< "Please enter part number for second arm: ";
-        cin.ignore(1,'\n');
+        //cin.ignore(1,'\n');
         getline(cin, input);
         
         for(int i = 0; i < size; i++){
@@ -161,7 +168,7 @@ void Models::create_models(vector<Parts>list, int size){
     while(part_exist){
         
         cout<< "Please enter torso part number: ";
-        cin.ignore(1,'\n');
+        //cin.ignore(1,'\n');
         getline(cin, input);
         
         for(int i = 0; i < size; i++){
@@ -207,7 +214,7 @@ void Models::create_models(vector<Parts>list, int size){
     while(part_exist){
         
         cout<< "Please enter Locomotor part number: ";
-        cin.ignore(1,'\n');
+        //cin.ignore(1,'\n');
         getline(cin, input);
         
         for(int i = 0; i < size; i++){
@@ -253,7 +260,7 @@ void Models::create_models(vector<Parts>list, int size){
     while(part_exist){
         
         cout<< "Please enter battery part number: ";
-        cin.ignore(1,'\n');
+        //cin.ignore(1,'\n');
         getline(cin, input);
         
         for(int i = 0; i < size; i++){
@@ -282,41 +289,122 @@ void Models::create_models(vector<Parts>list, int size){
         cout<< " ******************************************\n";
     }
 
-
-    
-    /*bool part_exist = true;
-    
-    int option = 0;
-    
-    string input "";
-    
-    for(int i = 0; i < size; i++){
-            
-        if(list[i].type == "head"){
-            
-            cout << "Part name: " << list[i].part_name << endl;
-            cout << "Part number: " << list[i].part_number << endl;
-            cout << "Description: " << list[i].description << endl;
-        }
-    }
-    
-    while(part_exist){
-        
-        cout<< "Please enter head part number: ";
-        
-        getline(cin, input);
-        
-        for(int i = 0; i < size; i++){
-            
-            if(list[i].part_number == input){
-                selection[0] = i;
-                part_exist = false;
-                continue;
-            }
-        }
-        
-        cout << "That part does not exist please try again.\n";
-        cout<< " ******************************************\n";
-    }*/
-
 }
+void Models::view_models(){
+    
+    //cout << "name: "<< name endl;
+    
+    print_head(head);
+    print_arm(arm_1);
+    print_arm(arm_2);
+    print_torso(torso);
+    print_loco(locomotor);
+    print_battery(battery);
+    
+}
+void Models::print_head(string s[6]){
+    
+    cout << "\n*************************\nPart type: "<< s[0];
+    cout << "\n*************************\nPart name: " << s[1];
+    cout << "\nPart number: " << s[2] << endl;
+    cout << "Part weight(in lbs): " << s[3] << endl;
+    cout << "Price: " << s[4] <<"\nDescription: "<< s[5]<<  endl;
+    cout << "*************************" << endl;
+    
+}
+
+void Models::print_arm(string s[7]){
+    
+    cout << "\n*************************\nPart type: "<< s[0];
+    cout << "\n*************************\nPart name: " << s[1];
+    cout << "\nPart number: " << s[2] << endl;
+    cout << "Power consumption (in watts): " << s[3] << endl;
+    cout << "Part weight(in lbs): " << s[4] << endl;
+    cout << "Price: " << s[5] <<"\nDescription: "<< s[6]<<  endl;
+    cout << "*************************" << endl;
+
+    
+}
+
+void Models::print_torso(string s[7]){
+    
+    cout << "\n*************************\nPart type: "<< s[0];
+    cout << "\n*************************\nPart name: " << s[1];
+    cout << "\nPart number: " << s[2] << endl;
+    cout << "Battery amount: " << s[3] << endl;
+    cout << "Part weight(in lbs): " << s[4] << endl;
+    cout << "Price: " << s[5] <<"\nDescription: "<< s[6]<<  endl;
+    cout << "*************************" << endl;
+
+
+    
+}
+
+void Models::print_loco(string s[8]){
+    
+    cout << "\n*************************\nPart type: "<< s[0];
+    cout << "\n*************************\nPart name: " << s[1];
+    cout << "\nPart number: " << s[2] << endl;
+    cout << "Max speed: " << s[3] << endl;
+    cout << "Power consumpion: " << s[4] << endl;
+    cout << "Part weight(in lbs): " << s[5] << endl;
+    cout << "Price: " << s[6] <<"\nDescription: "<< s[7]<<  endl;
+    cout << "*************************" << endl;
+
+    
+}
+
+void Models::print_battery(string s[7]){
+    
+    cout << "\n*************************\nPart type: "<< s[0];
+    cout << "\n*************************\nPart name: " << s[1];
+    cout << "\nPart number: " << s[2] << endl;
+    cout << "Battery energy: " << s[3] << endl;
+    cout << "Part weight(in lbs): " << s[4] << endl;
+    cout << "Price: " << s[5] <<"\nDescription: "<< s[6]<<  endl;
+    cout << "*************************" << endl;
+
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
