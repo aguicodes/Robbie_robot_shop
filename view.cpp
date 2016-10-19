@@ -161,19 +161,4 @@ void view_parts(vector<Parts> list, int counter){
 
     }
 }
-/*int check_it_in(vector<Library> list, int counter, string telephone){
-    for(int i = 1; i <= counter; i++){
-        if(!(list[i].number).compare(telephone)){
-            return i;
-        }
-    }
-    return -1;
-}
-int check_it_out(vector<Library> list, int counter, string idnum){
-    for(int i = 1; i <= counter; i++){
-        if(!(list[i].isbn).compare(idnum)){
-            return i;
-        }
-    }
-    return -1;
-}*/
+

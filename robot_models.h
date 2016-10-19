@@ -19,6 +19,10 @@ class Models {
         void print_torso(string s[7]);
         void print_loco(string s[8]);
         void print_battery(string s[7]);
+        void robot_name(string s);
+        void set_quantity(string s);
+        void add_to_price(string s);
+        void add_battery_price(string s);
     
     private:
         string head [6];
@@ -29,7 +33,7 @@ class Models {
         string battery [7];
         string name;
     
-        double cost;
+        const static double cost = 0;
         int quantity;
         int battery_quantity;
     
