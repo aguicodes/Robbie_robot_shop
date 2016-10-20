@@ -6,6 +6,8 @@ class Parts {
     public:
         void create_parts();
         void set_option(string input);
+        void set_price();
+        void set_quantity();
 
     
         string part_name;
@@ -21,6 +23,8 @@ class Parts {
         string battery_energy;
         string arm_power;
     
+        double price = 0;
+        int quantity = 0;
         bool torso = false;
         bool battery = false;
         bool arm = false;

@@ -4,9 +4,6 @@
 
 
 
-
-
-
 void Parts::set_option(string input){
     
     if ( type == "torso"){
@@ -33,15 +30,17 @@ void Parts::create_parts(){
     set_option(type);
     
     cout << "Create part name: ";
-    //`
+    
     getline(cin, part_name);
+    //part_name = "WHATEVER";
     
     cout << "Create part number: ";
     getline(cin, part_number);
     
     if(torso){
-        cout << "Please specify the amount of batteries this torso should hold: ";
-        getline(cin, torso_battery_amount);
+        set_quantity();
+        //*cout << "Please specify the amount of batteries this torso should hold: ";
+        //getline(cin, torso_battery_amount);
     }
     else if(battery){
         cout << "Please specify battery energy (in kilowatt hours): ";
@@ -60,11 +59,50 @@ void Parts::create_parts(){
     cout << "Part weight(in lbs): ";
     getline(cin, weight);
     
-    cout << "Price: ";
+    set_price();
+    /*cout << "Price: ";
     getline(cin, cost);
+    set_price(cost);*/
     
     cout << "Brief description: ";
     getline(cin, description);
 
+    
+}
+void Parts::set_price(){
+    
+    while(true){
+        cout << "Price: ";
+        getline(cin, cost);
+        
+        price = atof(cost.c_str());
+        
+        if(price == 0){
+            
+            cout << "That is not a valid input try again\n";
+        }
+        else{
+            
+            break;
+        }
+    }
+}
+void Parts::set_quantity(){
+    
+    while(true){
+        cout << "Please specify the amount of batteries this torso should hold: ";
+        getline(cin, torso_battery_amount);
+        quantity = atoi(torso_battery_amount.c_str());
+        
+        if(quantity == 0){
+            
+            cout << "That is not a valid input try again\n";
+        }
+        else{
+            
+            break;
+        }
+        
+    }
     
 }

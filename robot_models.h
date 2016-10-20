@@ -1,6 +1,6 @@
 
- #ifndef _ORDERS_H
- #define _ORDERS_H
+ #ifndef _ROBOT_MODELS_H
+ #define _ROBOT_MODELS_H
 #include "robot_parts.h"
 class Models {
     
@@ -20,9 +20,12 @@ class Models {
         void print_loco(string s[8]);
         void print_battery(string s[7]);
         void robot_name(string s);
+        string getName();
         void set_quantity(string s);
         void add_to_price(string s);
-        void add_battery_price(string s);
+        //void add_battery_price(string s);
+        string name;
+        double cost = 0;
     
     private:
         string head [6];
@@ -31,11 +34,11 @@ class Models {
         string torso[7];
         string locomotor [8];
         string battery [7];
-        string name;
     
-        const static double cost = 0;
+    
+        //double cost = 0;
         int quantity;
-        int battery_quantity;
+    
     
 };
  #endif

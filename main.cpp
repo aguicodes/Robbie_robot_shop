@@ -14,14 +14,18 @@ int main () {
     
     vector <Models> models;
  
+    string customer[5];
     
     int main_menu_option = 0;
     int create_option = 0;
-    int report_option = 0;
+    //int report_option = 0;
     static int i = 1;
     static int j = 1;
     int size = 100;
     int model_size = 100;
+    string input;
+    double price = 0;
+    int quantity = 0;
     
     while(true){
 
@@ -46,17 +50,93 @@ int main () {
                 models[j].create_models(parts, i);
                 j++;
             }
-            else if(create_option == 2){
-                //code here
+            else if(create_option == 1){
+                cout << "\nPurchasing your robot model!\n";
+                cout << "\nPlease make sure you have viewed the model catalog, you can press q n0w to go back, else press enter: ";
+                
+                cin.ignore(1,'\n');
+                getline(cin, input);
+                while (true){
+                    if(input == "q"){
+                        cout<< "\ngoing back...\n\n";
+                        break;
+                    }
+                    cout<< "\nPlease enter your name: ";
+                //cin.ignore(1,'\n');
+                    getline(cin, customer[0]);
+                    cout<< "Please enter your telephone number: ";
+                    getline(cin, customer[1]);
+                    cout << "Email address: ";
+                    getline(cin, customer[2]);
+                    cout << "Thank you! Now please enter the robot name you wish to buy: ";
+                    
+                    int found = 0;
+                    
+                    while(true){
+                        for(int k = 1; k < j; k++){
+                        //models[k].name;
+                            if(models[k].name == customer[3]){
+                            //models[k].view_models();
+                                found = 1;
+                                break;
+                            }
+                        }
+                        if(found == 1){
+                            break;
+                        }
+                        else{
+                            cout << "\nThat robot does not exist, try again: ";
+                            getline(cin, customer[3]);
+                            
+                        }
+                    }
+                    cout << "Quantity: ";
+                    while(true){
+                        
+                        getline(cin, customer[4]);
+                        quantity = atoi((customer[4]).c_str());
+                        
+                        if(quantity == 0){
+                            
+                            cout << "That is not a valid input try again: ";
+                            if(customer[3] == "q"){
+                                cout<< "\nexiting...\n\n";
+                                exit(0);
+                            }
+                            
+                        }
+                        else{
+                            
+                            break;
+                        }
+                        
+                    }
+                    //getline(cin, customer[4]);
+                    break;
+                }
+                
+                for(int k = 1; k < j; k++){
+                    //models[k].name;
+                    if(models[k].name == customer[3]){
+                        models[k].view_models();
+                        price = models[k].cost;
+                        price = price * quantity;
+                        cout << "total: " << price << endl;
+                        break;
+                    }
+                }
+               // price = price * quantity;
+                //cout << "total: " << price << endl;
+                
             }
-            else if(create_option == 3){
+            /*else if(create_option == 3){
                 //code here
             }
             else if(create_option == 4){
                
                 //
             }
-            /*++i;
+            ++i;
             if(i > (publications.size())){
                 publications.resize(size*size);
                 size = size*size;

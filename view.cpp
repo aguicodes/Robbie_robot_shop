@@ -84,7 +84,6 @@ int view_create(){
             cout<< "That is not a valid input please try again: ";
         }
     }
-
 }
 int view_reports(){
     string input;
