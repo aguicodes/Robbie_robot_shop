@@ -4,6 +4,11 @@
 #include "view.h"
 
 void Models::create_models(vector<Parts>list, int size){
+    if(list.size() == 0){
+        
+        cout << "\nNo parts.\nCreate parts\n";
+        return;
+    }
     
     string input;
     bool part_exist = true;
@@ -15,8 +20,6 @@ void Models::create_models(vector<Parts>list, int size){
     cout<< "Give it a name: ";
     cin.ignore(1,'\n');
     getline(cin, input);
-    //getName();
-    
     robot_name(input);
     
     cout << "\n\n******************************\nHead parts to choose from\n";
@@ -36,20 +39,16 @@ void Models::create_models(vector<Parts>list, int size){
     while(part_exist){
             
         cout<< "Please enter head part number: ";
-        //cin.ignore(1,'\n');
         getline(cin, input);
             
         for(int i = 1; i < size; i++){
                 
             if(list[i].part_number == input){
-                //cout << "works\n and this is the part: ";
                 head[0] = list[i].type;
-                //cout << head[0] << endl;
                 head[1] = list[i].part_name;
                 head[2] = list[i].part_number;
                 head[3] = list[i].weight;
                 head[4] = list[i].cost;
-                //add_to_price(head [4]);
                 head[5] = list[i].description;
                 cost = cost + list[i].price;
                 part_exist = false;
@@ -88,15 +87,12 @@ void Models::create_models(vector<Parts>list, int size){
         for(int i = 1; i < size; i++){
             
             if(list[i].part_number == input){
-                //cout << "works\n and this is the part: ";
                 arm_1 [0] = list[i].type;
-                //cout << head[0] << endl;
                 arm_1 [1] = list[i].part_name;
                 arm_1 [2] = list[i].part_number;
                 arm_1 [3] = list[i].arm_power;
                 arm_1 [4] = list[i].weight;
                 arm_1 [5] = list[i].cost;
-                //add_to_price(arm_1[5]);
                 arm_1 [6] = list[i].description;
                 cost = cost + list[i].price;
                 part_exist = false;
@@ -130,20 +126,17 @@ void Models::create_models(vector<Parts>list, int size){
     while(part_exist){
         
         cout<< "Please enter part number for second arm: ";
-        //cin.ignore(1,'\n');
         getline(cin, input);
         
         for(int i = 1; i < size; i++){
             
             if(list[i].part_number == input){
                 arm_2 [0] = list[i].type;
-                //cout << head[0] << endl;
                 arm_2 [1] = list[i].part_name;
                 arm_2 [2] = list[i].part_number;
                 arm_2 [3] = list[i].arm_power;
                 arm_2 [4] = list[i].weight;
                 arm_2 [5] = list[i].cost;
-                //add_to_price(arm_2[5]);
                 arm_2 [6] = list[i].description;
                 cost = cost + list[i].price;
                 part_exist = false;
@@ -176,7 +169,6 @@ void Models::create_models(vector<Parts>list, int size){
     while(part_exist){
         
         cout<< "Please enter torso part number: ";
-        //cin.ignore(1,'\n');
         getline(cin, input);
         
         for(int i = 1; i < size; i++){
@@ -186,14 +178,10 @@ void Models::create_models(vector<Parts>list, int size){
                 torso [1] = list[i].part_name;
                 torso [2] = list[i].part_number;
                 torso [3] = list[i].torso_battery_amount;
-                //set_quantity(torso[3]);
                 torso [4] = list[i].weight;
                 torso [5] = list[i].cost;
-                add_to_price(torso[5]);
                 torso [6] = list[i].description;
                 cost = cost + list[i].price;
-                //cost = cost + ((list[i].quantity) );
-
                 part_exist = false;
                 break;
             }
@@ -225,7 +213,6 @@ void Models::create_models(vector<Parts>list, int size){
     while(part_exist){
         
         cout<< "Please enter Locomotor part number: ";
-        //cin.ignore(1,'\n');
         getline(cin, input);
         
         for(int i = 1; i < size; i++){
@@ -236,10 +223,8 @@ void Models::create_models(vector<Parts>list, int size){
                 locomotor [2] = list[i].part_number;
                 locomotor [3] = list[i].locomotor_speed;
                 locomotor [4] = list[i].locomotor_power;
-                
                 locomotor [5] = list[i].weight;
                 locomotor [6] = list[i].cost;
-                //add_to_price(locomotor[6]);
                 locomotor [7] = list[i].description;
                 cost = cost + list[i].price;
                 
@@ -273,7 +258,6 @@ void Models::create_models(vector<Parts>list, int size){
     while(part_exist){
         
         cout<< "Please enter battery part number: ";
-        //cin.ignore(1,'\n');
         getline(cin, input);
         
         for(int i = 1; i < size; i++){
@@ -283,13 +267,10 @@ void Models::create_models(vector<Parts>list, int size){
                 battery [1] = list[i].part_name;
                 battery [2] = list[i].part_number;
                 battery [3] = list[i].battery_energy;
-                
                 battery [4] = list[i].weight;
                 battery [5] = list[i].cost;
-                //add_battery_price(battery[5]);
                 battery [6] = list[i].description;
                 cost = cost + list[i].price;
-                //battery_price = list[i].price;
                 part_exist = false;
                 break;
             }
@@ -306,8 +287,6 @@ void Models::create_models(vector<Parts>list, int size){
 
 }
 void Models::view_models(){
-    
-    //cout << "name: "<< name << endl;
     cout<< "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _";
     cout << "\nname: "<< name << endl;
     cout<< "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _";
@@ -319,8 +298,9 @@ void Models::view_models(){
     print_loco(locomotor);
     print_battery(battery);
     
-    cout << "\ncost: $" << cost << endl;
-    cout<< "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _";
+    cout << "\n\ncost: $" << cost << endl;
+    cout<< "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n";
+    
     
 }
 void Models::print_head(string s[6]){
@@ -397,15 +377,6 @@ void Models::robot_name(string s){
 string Models::getName()
 {
     return name;
-}
-
-void Models::set_quantity(string s){
-    
-    
-}
-void Models::add_to_price(string s){
-    
-    
 }
 
 

@@ -8,7 +8,7 @@ int view_menu(){
     
     bool error_check = true;
     
-    cout << "1 (C)reate\n2 View (R)eports\n\nEnter command here: ";
+    cout << "1 (C)reate\n2 View Cat(A)logs\n\nEnter command here: ";
  
     
     while(error_check){
@@ -20,9 +20,7 @@ int view_menu(){
             exit(0);
         }
         
-        //number = atoi(input.c_str());
-        
-        else if((input == "C") || (input == "R") ){
+        else if((input == "C") || (input == "A") ){
 
             if(input == "C"){
                 number = 1;
@@ -47,8 +45,8 @@ int view_create(){
     
     bool error_check = true;
     
-    cout << "\n1.1 (O)rder\n1.2 (C)ustomer\n1.3 (S)ales Associate\n";
-    cout << "1.4 Robot (M)odel\n1.5 Robot Com(P)onent\n\nEnter command here: ";
+    cout << "\n1.1 Robot Com(P)onent\n1.2 Robot (M)odel\n1.3 (O)rder\n\n";
+    cout << "Enter command here: ";
     
     
     while(error_check){
@@ -60,22 +58,16 @@ int view_create(){
             exit(0);
         }
         
-        else if((input == "O") || (input == "C") || (input == "S") || (input == "M") || (input == "P")){
+        else if((input == "O") || (input == "M") || (input == "P")){
             
             if(input == "O"){
-                number = 1;
-            }
-            else if (input == "C") {
-                number = 2;
-            }
-            else if (input == "S") {
                 number = 3;
             }
             else if (input == "M") {
-                number = 4;
+                number = 2;
             }
             else{
-                number = 5;
+                number = 1;
             }
             error_check = false;
             return number;
@@ -92,8 +84,8 @@ int view_reports(){
     
     bool error_check = true;
     
-    cout << "\n1.1 (O)rders\n1.2 (C)ustomers\n1.3 (S)ales Associates\n";
-    cout << "1.4 Robot (M)odels\n1.5 Robot(P)arts\n\nEnter command here: ";
+
+    cout << "1.1 Robot(P)arts\n1.2 Robot(M)odels\n\nEnter command here: ";
     
     
     while(error_check){
@@ -105,22 +97,13 @@ int view_reports(){
             exit(0);
         }
         
-        else if((input == "O") || (input == "C") || (input == "S") || (input == "M") || (input == "P")){
+        else if((input == "M") || (input == "P")){
             
-            if(input == "O"){
+            if(input == "P"){
                 number = 1;
             }
-            else if (input == "C") {
-                number = 2;
-            }
-            else if (input == "S") {
-                number = 3;
-            }
-            else if (input == "M") {
-                number = 4;
-            }
             else{
-                number = 5;
+                number = 2;
             }
             error_check = false;
             return number;
@@ -129,18 +112,15 @@ int view_reports(){
             cout<< "That is not a valid input please try again: ";
         }
     }
-    
 }
 void view_parts(vector<Parts> list, int counter){
     
-    //cout<< "size: " << list.size() << endl;
-
     for(int i = 1; i < counter; i++){
         
         cout << "\n*************************\nPart type: "<< list[i].type;
         cout << "\n*************************\nPart name: " << list[i].part_name;
         cout << "\nPart number: " << list[i].type << endl;
-        //cout << list[j].media << ") ISBN: " << list[j].isbn << endl;
+
         if(list[i].torso){
             cout << "Battery amount: " << list[i].torso_battery_amount << endl;
         }

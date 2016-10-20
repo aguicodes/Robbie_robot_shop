@@ -11,7 +11,6 @@ void Parts::set_option(string input){
     }
     else if ( type == "arm"){
         arm = true;
-        //cout<< "set\n";
     }
     else if ( type == "battery"){
         battery = true;
@@ -25,22 +24,18 @@ void Parts::create_parts(){
     cout << "\nPart type: ";
     cin.ignore(1,'\n');
     getline(cin, type);
-    //cout<< "this word: " << type << endl;
     
     set_option(type);
     
     cout << "Create part name: ";
     
     getline(cin, part_name);
-    //part_name = "WHATEVER";
     
     cout << "Create part number: ";
     getline(cin, part_number);
     
     if(torso){
         set_quantity();
-        //*cout << "Please specify the amount of batteries this torso should hold: ";
-        //getline(cin, torso_battery_amount);
     }
     else if(battery){
         cout << "Please specify battery energy (in kilowatt hours): ";
@@ -58,12 +53,7 @@ void Parts::create_parts(){
     }
     cout << "Part weight(in lbs): ";
     getline(cin, weight);
-    
     set_price();
-    /*cout << "Price: ";
-    getline(cin, cost);
-    set_price(cost);*/
-    
     cout << "Brief description: ";
     getline(cin, description);
 
@@ -102,7 +92,5 @@ void Parts::set_quantity(){
             
             break;
         }
-        
     }
-    
 }

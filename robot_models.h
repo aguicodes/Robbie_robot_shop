@@ -21,9 +21,6 @@ class Models {
         void print_battery(string s[7]);
         void robot_name(string s);
         string getName();
-        void set_quantity(string s);
-        void add_to_price(string s);
-        //void add_battery_price(string s);
         string name;
         double cost = 0;
     
@@ -34,9 +31,6 @@ class Models {
         string torso[7];
         string locomotor [8];
         string battery [7];
-    
-    
-        //double cost = 0;
         int quantity;
     
     
